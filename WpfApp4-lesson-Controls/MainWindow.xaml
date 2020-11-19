@@ -6,7 +6,38 @@
         xmlns:local="clr-namespace:WpfApp4_lesson_Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid x:Name="MyGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         
+        <UniformGrid x:Name="buttons" Grid.Row="1" Grid.Column="3" Columns="3" >
+        <Button  Click="Button_Click" Grid.Column="0" Grid.Row="2" Background="White">1</Button>
+            <Button Click="Button_Click" Grid.Column="1" Grid.Row="2" Background="White">2</Button>
+            <Button Click="Button_Click" Grid.Column="2" Grid.Row="2" Background="White">3</Button>
+            <Button Click="Button_Click" Grid.Column="0" Grid.Row="3" Background="White">4</Button>
+            <Button Click="Button_Click" Grid.Column="1" Grid.Row="3" Background="White">5</Button>
+            <Button Click="Button_Click" Grid.Column="2" Grid.Row="3" Background="White">6</Button>
+        </UniformGrid>
+        
+        <Border Grid.Column="0" Grid.Row="0" Background="White">
+            <Button  Name="Start" Content="Start" Width="70" Height="50" Loaded="Start_Loaded" Click="Start_Click">
+            </Button>
+
+        </Border>
+        <Label Name="lblTime" Grid.Row="2" Background="AntiqueWhite"></Label>
+        
+        <Slider Name="slider" Grid.Row="3" Margin="0,0,500,0" Maximum="15" Minimum="5" Value="0" SelectionStart="15" TickFrequency="1" TickPlacement="BottomRight" Width="240" Height="40" ValueChanged="Slider_ValueChanged"/>
+        
+        <ProgressBar x:Name="bar" Grid.Row="3" Maximum="7" Height="40" Width="300" Margin="0,0,-400,0" Background="White" Foreground="Green" Value="0"/>
+        <Label Grid.Row="3" Height="30" Width="50" Margin="0,50,700,0">Hard
+            </Label>
+        <Label Grid.Row="3" Height="30" Width="60" Margin="0,50,500,0">Medium
+        </Label>
+        <Label Grid.Row="3" Height="30" Width="60" Margin="0,50,250,0">Lite
+        </Label>
     </Grid>
 </Window>
